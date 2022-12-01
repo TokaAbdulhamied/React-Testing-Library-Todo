@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
 import FollowersList from "./FollowersList";
 
@@ -8,16 +8,15 @@ import FollowersList from "./FollowersList";
 
 */
 const FollowersListMock = () => (
-  <BrowserRouter>
+  <MemoryRouter>
     <FollowersList />
-  </BrowserRouter>
+  </MemoryRouter>
 );
 
 describe("FollowersList", () => {
   it("should render follower item", async () => {
     render(<FollowersListMock />);
     const FollowerDivItem = await screen.findByTestId("follower-item-0");
-    console.log(FollowerDivItem);
     expect(FollowerDivItem).toBeInTheDocument();
   });
 

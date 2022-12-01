@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
 import Todo from "./Todo";
 
@@ -10,9 +10,9 @@ import Todo from "./Todo";
 
 */
 const TodoMock = () => (
-  <BrowserRouter>
+  <MemoryRouter>
     <Todo />
-  </BrowserRouter>
+  </MemoryRouter>
 );
 const addTasks = (tasks) => {
   const InputElement = screen.getByPlaceholderText(/Add a new task here.../i);

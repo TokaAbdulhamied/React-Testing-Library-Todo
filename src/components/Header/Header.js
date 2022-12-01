@@ -1,13 +1,11 @@
 import React from "react";
 import "./Header.css";
 
-export default function Header({ title }) {
+export default function Header({ title, dataTestid }) {
   return (
     <>
-      <h3 className="header" data-testid="header-1">
-        Welcom in
-      </h3>
-      <h1 className="header" data-testid="header-2">
+      <h3 className="header">Welcom in</h3>
+      <h1 className="header" data-testid={dataTestid}>
         {title}
       </h1>
     </>
